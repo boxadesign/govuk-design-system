@@ -38,6 +38,7 @@
       position: relative;
       min-height: 0;
       flex: 1 1 100%;
+      overflow: hidden;
 
       > * {
         overflow-x: scroll;
@@ -65,6 +66,7 @@
       margin-left: auto;
       flex: 1 1 auto;
       flex-direction: column;
+      min-width: 0;
 
       // Stick footer to bottom of screen if content is shorter than viewport
       main {
@@ -74,7 +76,7 @@
     }
   }
 
-  .no-flexbox {
+  .no-flexbox.no-flexboxtweener {
     .app-pane {
       height: auto;
       overflow: visible;
