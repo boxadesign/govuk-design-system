@@ -107,3 +107,15 @@ describe('Patterns page', () => {
     })
   })
 })
+
+describe('Styleas -> Images page', () => {
+  describe('when both nunjucks and html parameters are set to "false"', () => {
+    it('the tab list items are not rendered', async () => {
+      await page.goto(baseUrl + '/styles/images/', { waitUntil: 'load' })
+      const tabListItems = await page.evaluate(() => document.body.querySelector('#example-default .app-tabs'))
+      const tabHeadingItems = await page.evaluate(() => document.body.querySelector('#example-default .app-tabs__heading'))
+      expect(tabListItems).toBeFalsy()
+      expect(tabHeadingItems).toBeFalsy()
+    })
+  })
+})
