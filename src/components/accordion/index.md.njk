@@ -1,0 +1,97 @@
+---
+title: Accordion
+description: The accordion component lets users show and hide sections of related content on a page
+section: Components
+aliases:
+backlog_issue_id: 1
+layout: layout-pane.njk
+status: Experimental
+statusMessage: This component is currently experimental because <a class="govuk-link" href="#next-steps">more research</a> is needed to validate it.
+---
+
+{% from "_example.njk" import example %}
+
+The accordion component lets users show and hide sections of related content on a page.
+
+{{ example({group: "components", item: "accordion", example: "default", html: true, nunjucks: true, open: false, size: "xl"}) }}
+
+## When to use this component
+
+Only use an accordion if there's evidence it’s helpful for users to:
+
+- see an overview of multiple, related sections of content
+- expand and collapse those sections as needed
+
+Accordions can work well for people who use a service regularly, for example, users of a caseworking system. Their need to perform tasks quickly may be greater than their need for simplicity of first-time use.
+
+### Accordions and tabs
+
+Accordions and [tabs](/components/tabs/) are similar components. They both hide sections of content which a user can choose to reveal.
+
+Consider using an accordion instead of tabs if:
+
+- users might need to view more than one section at a time
+- there are many sections of content – accordions display vertically, so they can fit more sections than horizontal tabs
+
+Tabs may work better for users who need to switch quickly between 2 sections. Accordions push other sections down the page when they open, but tabs do not move which makes it easier to switch.
+
+## When not to use this component
+
+Accordions hide content from users and not everyone will notice them or understand how they work.
+
+Test your content without an accordion first. Consider if it’s better to:
+
+- simplify and reduce the amount of content
+- split the content across multiple pages
+- keep the content on a single page, separated by headings
+- use a list of links to let users navigate quickly to specific sections of content
+
+Do not use the accordion component if the total amount of content it needs to contain will make the page slow to load.
+
+Accordions work best for simple content and links. Do not use accordions to divide a form into sections. Split the sections across separate pages instead.
+
+Do not use an accordion if your users commonly need to read through all of the content in order, for example, to understand a step-by-step process.
+
+## How it works
+
+There are 2 ways to use the accordion component. You can use HTML or, if you’re using Nunjucks or the GOV.UK Prototype Kit, you can use the Nunjucks macro.
+
+### Find out how your users interact with the content
+
+Users might need the sections they have opened to stay open if they leave and then return to the page. You can configure the accordion component to stay open if your users need it to.
+
+Find out the best order for the sections from user research.
+
+### Use clear labels
+
+Accordions hide content, so the labels need to make it very clear what they will reveal, otherwise users will not know if they need to click on them. If it’s necessary, you can also add a summary line to help users understand what is in the section.
+
+{{ example({group: "components", item: "accordion", example: "with-summary-section", html: true, nunjucks: true, open: false, size: "xl"}) }}
+
+If you struggle to come up with clear labels, it might be because the way you’ve separated the content is not clear.
+
+### Do not disable sections
+
+Disabling elements is normally confusing for users. If there is no content for a section, either remove the section or, if this would be confusing for your users, explain why there is no content when the section is opened.
+
+## Research on this component
+This component is experimental because there are different approaches to accordions in services. More research is needed to determine the best approach, or to know when a different approach works better.
+
+This component was originally created and tested by a team at the Government Digital Service (GDS) on the [GOV.UK Service Manual](https://www.gov.uk/service-manual) and [GOV.UK topic pages](https://designnotes.blog.gov.uk/2017/06/29/designing-new-navigation-elements-for-gov-uk/).
+
+The team made sure the component is accessible, for example that users can interact with it using just the keyboard.
+
+### Known issues and gaps
+The plus and minus icon is on the right side of the component which means users of screen magnifiers might not see it.
+
+### Services using this component
+- Check the MOT history of a vehicle (GDS)
+- GOV.UK Service Manual (GDS)
+- GOV.UK country pages (eg [Albania](https://www.gov.uk/world/albania)) (GDS)
+- Registers (GDS)
+- DVSA
+- [Flood information service](https://flood-warning-information.service.gov.uk/warnings) (Environment agency)
+- Find and compare schools in England (school page) (DfE)
+
+### Next steps
+There are other approaches to accordions in government. For example [Check the MOT history of a vehicle](https://www.gov.uk/check-mot-history) uses up and down arrows instead of plus and minus icons. [GOV.UK Step by step navigation](https://www.gov.uk/learn-to-drive-a-car) uses the words 'Show' and 'Hide' on the left side. More research is needed on these approaches.

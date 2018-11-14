@@ -1,0 +1,32 @@
+---
+title: Accordion with summary sections
+layout: layout-example.njk
+---
+
+{% from "accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+  id: "accordion-with-summary-sections",
+  items: [
+    {
+      label: {
+        html: "<h2 class='govuk-heading-m'>Test</h2>
+            <p class='govuk-body'>Additional description</p>"
+      },
+      content: {
+        html: "<ul class='govuk-list govuk-list--bullet'><li>Example item 1</li>
+        </ul>"
+      }
+    },
+    {
+      label: {
+        html: "<h2 class='govuk-heading-m'>Test</h2>
+          <p class='govuk-body'>Additional description</p>"
+      },
+      content: {
+        html: "<ul class='govuk-list govuk-list--bullet'><li>Example item 2</li>
+        </ul>"
+      }
+    }
+  ]
+}) }}
